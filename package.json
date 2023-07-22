@@ -1,0 +1,16 @@
+{
+  "name": "alura-elements-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "alura-elements --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alura-elements": "file:packages/alura-elements"
+  }
+}
