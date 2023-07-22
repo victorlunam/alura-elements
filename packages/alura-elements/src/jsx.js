@@ -1,51 +1,51 @@
-const EVENTS = ["onClick", "onBlur"];
+const EVENTS = ['onClick', 'onBlur']
 const MAP_TO_NATIVE_EVENTS = {
-  onClick: "click",
-};
+  onClick: 'click'
+}
 const MAP_TO_NATIVE_PROPS = {
-  className: "class",
-};
+  className: 'class'
+}
 
-const isEvent = (name) => EVENTS.includes(name);
-const mapToNativeProps = (prop) => MAP_TO_NATIVE_PROPS[prop];
-const mapToNativeEvents = (prop) => MAP_TO_NATIVE_EVENTS[prop];
+const isEvent = (name) => EVENTS.includes(name)
+const mapToNativeProps = (prop) => MAP_TO_NATIVE_PROPS[prop]
+const mapToNativeEvents = (prop) => MAP_TO_NATIVE_EVENTS[prop]
 
 const jsx = (tag, props, ...children) => {
-  let element;
+  let element
 
-  if (typeof tag === "function") {
-    element = tag();
+  if (typeof tag === 'function') {
+    element = tag()
   } else {
-    element = document.createElement(tag);
+    element = document.createElement(tag)
   }
 
   if (props) {
     for (const [key, value] of Object.entries(props)) {
       if (isEvent(key)) {
-        const nativeEventKey = mapToNativeEvents(key);
-        element.addEventListener(nativeEventKey, value);
+        const nativeEventKey = mapToNativeEvents(key)
+        element.addEventListener(nativeEventKey, value)
       }
 
       if (mapToNativeProps(key)) {
-        element.setAttribute(mapToNativeProps(key), value);
+        element.setAttribute(mapToNativeProps(key), value)
       }
     }
   }
 
   for (const child of children) {
-    if (child === null) continue;
+    if (child === null) continue
 
-    if (typeof child === "function") {
-      const nestedElement = child();
-      element.appendChild(nestedElement);
+    if (typeof child === 'function') {
+      const nestedElement = child()
+      element.appendChild(nestedElement)
 
-      continue;
+      continue
     }
 
-    element.append(child);
+    element.append(child)
   }
 
-  return element;
-};
+  return element
+}
 
-export default jsx;
+export default jsx

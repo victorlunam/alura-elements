@@ -1,14 +1,14 @@
-import EventSignal from "./models/EventSignal.js";
+import EventSignal from './models/EventSignal.js'
 
 const useState = (value) => {
-  let newValue = value;
-  const eventSignal = new EventSignal();
+  let newValue = value
+  const eventSignal = new EventSignal()
 
   eventSignal.listen((event) => {
-    newValue = event.detail;
-  });
+    newValue = event.detail
+  })
 
-  return [newValue, eventSignal.send];
-};
+  return [newValue, eventSignal.send]
+}
 
-export default useState;
+export default useState

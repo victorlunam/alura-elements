@@ -1,23 +1,23 @@
 class Stack {
   constructor() {
-    this.stack = [];
+    this.stack = []
   }
 
   get size() {
-    this.stack.length;
+    return this.stack.length
   }
 
   push(item) {
-    this.stack.push(item);
+    this.stack.push(item)
   }
 
   pop() {
-    return this.stack.pop();
+    return this.stack.pop()
   }
 
   peek() {
-    return this.stack[this.size - 1];
+    return this.stack[this.size - 1]
   }
 }
 
-export default Stack;
+export default Stack

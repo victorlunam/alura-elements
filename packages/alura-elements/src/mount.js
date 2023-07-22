@@ -1,5 +1,5 @@
 const mount = (element, component) => {
-  element.appendChild(component);
-};
+  element.appendChild(component)
+}
 
-export default mount;
+export default mount

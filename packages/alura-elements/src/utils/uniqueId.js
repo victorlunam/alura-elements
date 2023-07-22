@@ -1,8 +1,9 @@
-function* uniqueId(prefix = "") {
-  let _id = 0;
+function* uniqueId(prefix = '') {
+  let id = 0
+
   while (true) {
     yield `${prefix}${id++}`
   }
 }
 
-export default uniqueId;
+export default uniqueId

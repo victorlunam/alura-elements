@@ -1,24 +1,24 @@
-import uniqueId from "../utils/uniqueId.js";
+import uniqueId from '../utils/uniqueId.js'
 
 class EventSignal {
-  name;
+  name
 
   constructor() {
-    this.name = uniqueId("useState-"); // useState-1
+    this.name = uniqueId('useState-')
   }
 
-  send(data) { //1
-    const event = new CustomEvent(this.name, { bubbles: false, detail: data });
-    document.dispatchEvent(event);
+  send(data) {
+    const event = new CustomEvent(this.name, { bubbles: false, detail: data })
+    document.dispatchEvent(event)
   }
 
   listen = (handler) => {
-    document.addEventListener(this.name, handler);
-  };
+    document.addEventListener(this.name, handler)
+  }
 
   remove = (handler) => {
-    document.removeEventListener(this.name, handler);
-  };
+    document.removeEventListener(this.name, handler)
+  }
 }
 
-export default EventSignal;
+export default EventSignal
