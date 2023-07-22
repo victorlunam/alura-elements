@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "alura-elements": "file:packages/alura-elements"
+    "@swc/core": "^1.3.70",
+    "alura-elements": "file:packages/alura-elements",
+    "alura-transpiler": "file:packages/alura-transpiler"
   }
 }
